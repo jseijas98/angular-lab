@@ -1,0 +1,16 @@
+
+
+<section class="forms-panel">
+  <form [formGroup]="form">
+    <mat-form-field>
+      <mat-label>Input</mat-label>
+      <input matInput type="text" maxlength="30" formControlName="name">
+    </mat-form-field>
+  </form>
+  @if (formValiderrors('name')) {
+    <mat-error>{{getErrorMessage('name')}}</mat-error>
+    <br>
+  }
+  <button mat-raised-button color="primary"
+    [disabled]="!form.valid">Primary</button>
+</section>
